@@ -17,7 +17,7 @@ public class Profile {
 	@Column(name="name", columnDefinition = "VARCHAR", length = 40, nullable = false)
 	private String name;
 	
-	@Column(name = "description", columnDefinition = "LongText", nullable = true)
+	@Column(name = "description", columnDefinition = "Text", nullable = true)
 	private String description;
 	
 	@Column(name = "userImg", columnDefinition = "VARCHAR", length = 400, nullable = true)

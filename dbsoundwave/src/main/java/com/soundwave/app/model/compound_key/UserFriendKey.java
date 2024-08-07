@@ -3,9 +3,7 @@ package com.soundwave.app.model.compound_key;
 import jakarta.persistence.*;
 import java.io.Serializable;
 
-import org.springframework.stereotype.Component;
 
-@Component
 @Embeddable
 public class UserFriendKey implements Serializable {
 	

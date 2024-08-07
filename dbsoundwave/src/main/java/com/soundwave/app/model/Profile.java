@@ -2,8 +2,6 @@ package com.soundwave.app.model;
 
 import java.time.LocalDate;
 
-import org.springframework.data.annotation.Id;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -12,7 +10,7 @@ public class Profile {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idProfile;
+	private Long profileId;
 	
 	@Column(name="name", columnDefinition = "VARCHAR", length = 40, nullable = false)
 	private String name;
@@ -36,10 +34,10 @@ public Profile() {
 		
 	}
 
-		public Profile(Long idProfile, String name, String description, String userImg, LocalDate birthday, String location,
+		public Profile(Long profileId, String name, String description, String userImg, LocalDate birthday, String location,
 			Long userId) {
 		super();
-		this.idProfile = idProfile;
+		this.profileId = profileId;
 		this.name = name;
 		this.description = description;
 		this.userImg = userImg;
@@ -47,11 +45,11 @@ public Profile() {
 		this.location = location;
 		this.userId = userId;
 	}
-	public Long getIdProfile() {
-		return idProfile;
+	public Long getProfileId() {
+		return profileId;
 	}
-	public void setIdProfile(Long idProfile) {
-		this.idProfile = idProfile;
+	public void setProfileId(Long profileId) {
+		this.profileId = profileId;
 	}
 	public String getName() {
 		return name;
@@ -93,8 +91,8 @@ public Profile() {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Profile [idProfile=");
-		builder.append(idProfile);
+		builder.append("Profile [profileId=");
+		builder.append(profileId);
 		builder.append(", name=");
 		builder.append(name);
 		builder.append(", description=");

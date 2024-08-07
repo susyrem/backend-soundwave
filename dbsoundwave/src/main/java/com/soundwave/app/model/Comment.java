@@ -1,7 +1,5 @@
 package com.soundwave.app.model;
 
-import java.time.LocalDateTime;
-
 import jakarta.persistence.*;
 
 @Entity

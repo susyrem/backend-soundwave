@@ -11,7 +11,7 @@ public class User {
 	
 	@Id // Primary key
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	private Long idUser;
 	
 	@Column(name="username", length=100, nullable=false, unique=true)
 	private String username;
@@ -45,12 +45,12 @@ public class User {
 		this.active = active;
 	}
 
-	public Long getId() {
-		return id;
+	public Long getIdUser() {
+		return idUser;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long idUser) {
+		this.idUser = idUser;
 	}
 
 	public String getUsername() {
@@ -104,8 +104,8 @@ public class User {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("User [id=");
-		builder.append(id);
+		builder.append("User [idUser=");
+		builder.append(idUser);
 		builder.append(", username=");
 		builder.append(username);
 		builder.append(", phone=");

@@ -1,0 +1,110 @@
+package com.soundwave.app.model;
+
+import java.time.LocalDate;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="users")
+public class User {
+	
+	
+	@Id // Primary key
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long idUser;
+	
+	@Column(name="username", length=100, nullable=false, unique=true)
+	private String username;
+	
+	@Column(name="phone", length=10, nullable=false)
+	private String phone;
+	
+	@Column(name="email", length=100, nullable=false, unique=true)
+	private String email;
+	
+	@Column(name="createdat", nullable=true)
+	private LocalDate createdAt;
+	
+	@Column(name="password", length=150, nullable=false)
+	private String password;
+	
+	@Column(name="active", nullable=false)
+	private boolean active;
+	
+	public User() {
+		
+	}
+
+	public User(String username, String phone, String email, LocalDate createdAt, String password, boolean active) {
+		super();
+		this.username = username;
+		this.phone = phone;
+		this.email = email;
+		this.createdAt = createdAt;
+		this.password = password;
+		this.active = active;
+	}
+
+	public Long getIdUser() {
+		return idUser;
+	}
+
+	public void setIdUser(Long idUser) {
+		this.idUser = idUser;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public LocalDate getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(LocalDate createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	@Override
+	public String toString() {
+		return "User [idUser=" + idUser + ", username=" + username + ", phone=" + phone + ", email=" + email
+				+ ", createdAt=" + createdAt + ", password=" + password + ", active=" + active + "]";
+	}
+
+}

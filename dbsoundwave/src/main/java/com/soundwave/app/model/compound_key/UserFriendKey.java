@@ -11,42 +11,42 @@ public class UserFriendKey implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@Column(name="id_user1")
-	private Long idUser1;
-	@Column(name="id_user")
-	private Long idUser2;
+	@Column(name="user_id1")
+	private Long userId1;
+	@Column(name="user_id2")
+	private Long userId2;
 	
 
 	
-	public UserFriendKey(Long idUser1, Long idUser2, boolean status) {
+	public UserFriendKey(Long userId1, Long userId2) {
 		super();
-		this.idUser1=idUser1;
-		this.idUser2=idUser2;
+		this.userId1=userId1;
+		this.userId2=userId2;
 
 	}
 
 
 
-	public Long getIdUser1() {
-		return idUser1;
+	public Long getUserId1() {
+		return userId1;
 	}
 
 
 
-	public void setIdUser1(Long idUser1) {
-		this.idUser1 = idUser1;
+	public void setUserId1(Long userId1) {
+		this.userId1 = userId1;
 	}
 
 
 
-	public Long getIdUser2() {
-		return idUser2;
+	public Long getUserId2() {
+		return userId2;
 	}
 
 
 
-	public void setIdUser2(Long idUser2) {
-		this.idUser2 = idUser2;
+	public void setUserId2(Long userId2) {
+		this.userId2 = userId2;
 	}
 
 
@@ -55,6 +55,6 @@ public class UserFriendKey implements Serializable {
 		return serialVersionUID;
 	}
 
-	
+
 
 }

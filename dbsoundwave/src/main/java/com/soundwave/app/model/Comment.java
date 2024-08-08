@@ -8,30 +8,31 @@ public class Comment {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	private Long commentId;
 	
 	@Column(name="content", columnDefinition = "Text", nullable = false)
 	private String content;
 	
+	@Column(name="user_id", columnDefinition = "Long", nullable = false)
 	private Long userId;
 
 public Comment() {
 		
 	}
 	
-	public Comment(Long id, String content, Long userId) {
+	public Comment(Long commentId, String content, Long userId) {
 		super();
-		this.id = id;
+		this.commentId = commentId;
 		this.content = content;
 		this.userId = userId;
 }
 
-	public Long getId() {
-		return id;
+	public Long getCommentId() {
+		return commentId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setCommentId(Long commentId) {
+		this.commentId = commentId;
 	}
 
 	public String getContent() {
@@ -53,8 +54,8 @@ public Comment() {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Comment [id=");
-		builder.append(id);
+		builder.append("Comment [commentId=");
+		builder.append(commentId);
 		builder.append(", content=");
 		builder.append(content);
 		builder.append(", userId=");
@@ -62,6 +63,8 @@ public Comment() {
 		builder.append("]");
 		return builder.toString();
 	}
+
+	
 	
 }
 

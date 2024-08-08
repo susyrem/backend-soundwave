@@ -1,35 +1,45 @@
 package com.soundwave.app.model;
 
+
 import jakarta.persistence.*;
 
 @Entity
 @Table(name="notifications")
 public class Notification { 
 	
+	public enum NotificationType{
+		NEW_POST
+	}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	private Long notificationId;
 	
-	@Column(name="postId", columnDefinition = "Long", nullable = false)
+	@Column(name="post_id", columnDefinition = "Long", nullable = false)
 	private Long postId;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name="type", nullable=false)
+	private NotificationType type;
 	
 	public Notification() {
 		
 	}
 	
-	public Notification(Long id, Long postId) {
+	public Notification(Long notificationId, Long postId, NotificationType type) {
 		super();
-		this.id=id;
+		this.notificationId=notificationId;
 		this.postId=postId;
+		this.type=type;
 		
 	}
 
-	public Long getId() {
-		return id;
+	public Long getNotificationId() {
+		return notificationId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setNotificationId(Long notificationId) {
+		this.notificationId = notificationId;
 	}
 
 	public Long getPostId() {
@@ -40,16 +50,27 @@ public class Notification {
 		this.postId = postId;
 	}
 
+	public NotificationType getType() {
+		return type;
+	}
+
+	public void setType(NotificationType type) {
+		this.type = type;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Notification [id=");
-		builder.append(id);
+		builder.append("Notification [notificationId=");
+		builder.append(notificationId);
 		builder.append(", postId=");
 		builder.append(postId);
+		builder.append(", type=");
+		builder.append(type);
 		builder.append("]");
 		return builder.toString();
 	}
+
 	
 	
 

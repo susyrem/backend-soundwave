@@ -11,7 +11,7 @@ public class User {
 	
 	@Id // Primary key
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long idUser;
+	private Long userId;
 	
 	@Column(name="username", length=100, nullable=false, unique=true)
 	private String username;
@@ -22,7 +22,7 @@ public class User {
 	@Column(name="email", length=100, nullable=false, unique=true)
 	private String email;
 	
-	@Column(name="createdat", nullable=true)
+	@Column(name="created_at", nullable=true)
 	private LocalDate createdAt;
 	
 	@Column(name="password", length=150, nullable=false)
@@ -45,12 +45,12 @@ public class User {
 		this.active = active;
 	}
 
-	public Long getIdUser() {
-		return idUser;
+	public Long getUserId() {
+		return userId;
 	}
 
-	public void setId(Long idUser) {
-		this.idUser = idUser;
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
 	public String getUsername() {
@@ -104,8 +104,8 @@ public class User {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("User [idUser=");
-		builder.append(idUser);
+		builder.append("User [userId=");
+		builder.append(userId);
 		builder.append(", username=");
 		builder.append(username);
 		builder.append(", phone=");
@@ -121,7 +121,6 @@ public class User {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
 
+	
 }

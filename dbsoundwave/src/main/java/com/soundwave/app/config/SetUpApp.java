@@ -1,4 +1,4 @@
-package com.soundwave.app.config;
+/*package com.soundwave.app.config;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -46,4 +46,4 @@ public class SetUpApp implements CommandLineRunner {
 				));
 	}
 
-}
+}*/

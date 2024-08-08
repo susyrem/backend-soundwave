@@ -18,7 +18,7 @@ public class Profile {
 	@Column(name = "description", columnDefinition = "Text", nullable = true)
 	private String description;
 	
-	@Column(name = "userImg", columnDefinition = "VARCHAR", length = 400, nullable = true)
+	@Column(name = "user_img", columnDefinition = "VARCHAR", length = 400, nullable = true)
 	private String userImg;
 	
 	@Column(name = "birthday", columnDefinition = "LocalDate", nullable = true)
@@ -27,7 +27,7 @@ public class Profile {
 	@Column(name = "location", columnDefinition = "VARCHAR", length = 150, nullable = true)
 	private String location;
 	
-	@Column(name = "userId", columnDefinition = "Long", nullable = true)
+	@Column(name = "user_id", columnDefinition = "Long", nullable = false)
 	private Long userId;
 	
 public Profile() {
@@ -45,70 +45,84 @@ public Profile() {
 		this.location = location;
 		this.userId = userId;
 	}
-	public Long getProfileId() {
-		return profileId;
-	}
-	public void setProfileId(Long profileId) {
-		this.profileId = profileId;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	public String getUserImg() {
-		return userImg;
-	}
-	public void setUserImg(String userImg) {
-		this.userImg = userImg;
-	}
-	public LocalDate getBirthday() {
-		return birthday;
-	}
-	public void setBirthday(LocalDate birthday) {
-		this.birthday = birthday;
-	}
-	public String getLocation() {
-		return location;
-	}
-	public void setLocation(String location) {
-		this.location = location;
-	}
-	public Long getUserId() {
-		return userId;
-	}
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Profile [profileId=");
-		builder.append(profileId);
-		builder.append(", name=");
-		builder.append(name);
-		builder.append(", description=");
-		builder.append(description);
-		builder.append(", userImg=");
-		builder.append(userImg);
-		builder.append(", birthday=");
-		builder.append(birthday);
-		builder.append(", location=");
-		builder.append(location);
-		builder.append(", userId=");
-		builder.append(userId);
-		builder.append("]");
-		return builder.toString();
-	}
+		public Long getProfileId() {
+			return profileId;
+		}
+
+		public void setProfileId(Long profileId) {
+			this.profileId = profileId;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getDescription() {
+			return description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+
+		public String getUserImg() {
+			return userImg;
+		}
+
+		public void setUserImg(String userImg) {
+			this.userImg = userImg;
+		}
+
+		public LocalDate getBirthday() {
+			return birthday;
+		}
+
+		public void setBirthday(LocalDate birthday) {
+			this.birthday = birthday;
+		}
+
+		public String getLocation() {
+			return location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
+
+		public Long getUserId() {
+			return userId;
+		}
+
+		public void setUserId(Long userId) {
+			this.userId = userId;
+		}
+
+		@Override
+		public String toString() {
+			StringBuilder builder = new StringBuilder();
+			builder.append("Profile [profileId=");
+			builder.append(profileId);
+			builder.append(", name=");
+			builder.append(name);
+			builder.append(", description=");
+			builder.append(description);
+			builder.append(", userImg=");
+			builder.append(userImg);
+			builder.append(", birthday=");
+			builder.append(birthday);
+			builder.append(", location=");
+			builder.append(location);
+			builder.append(", userId=");
+			builder.append(userId);
+			builder.append("]");
+			return builder.toString();
+		}
 	
-	
+		
 	
 }

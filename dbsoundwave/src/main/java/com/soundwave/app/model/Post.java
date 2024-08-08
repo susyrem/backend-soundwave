@@ -12,7 +12,7 @@ public class Post {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long idPost;
+	private Long postId;
 	
 	@Column (name="content", columnDefinition = "LongText", nullable=false)
 	private String content;
@@ -20,10 +20,10 @@ public class Post {
 	@Column (name="url", columnDefinition = "VARCHAR", length = 200, nullable=true)	
 	private String url;
 	
-	@Column (name="createdAt", columnDefinition = "LocalDateTime", nullable=false)
+	@Column (name="created_at", columnDefinition = "LocalDateTime", nullable=false)
 	private LocalDateTime createdAt;
 	
-	@Column (name="userId", columnDefinition = "Long", nullable=false)
+	@Column (name="user_id", columnDefinition = "Long", nullable=false)
 	private Long userId;
 
 	
@@ -31,22 +31,22 @@ public class Post {
 		
 	}
 	
-	public Post(Long idPost, String content, String url, LocalDateTime createdAt,
+	public Post(Long postId, String content, String url, LocalDateTime createdAt,
 			Long userId) {
 		super();
-		this.idPost = idPost;
+		this.postId = postId;
 		this.content = content;
 		this.url = url;
 		this.createdAt = createdAt;
 		this.userId = userId;
 }
 
-	public Long getIdPost() {
-		return idPost;
+	public Long getPostId() {
+		return postId;
 	}
 
-	public void setIdPost(Long idPost) {
-		this.idPost = idPost;
+	public void setPostId(Long postId) {
+		this.postId = postId;
 	}
 
 	public String getContent() {
@@ -84,8 +84,8 @@ public class Post {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Post [idPost=");
-		builder.append(idPost);
+		builder.append("Post [postId=");
+		builder.append(postId);
 		builder.append(", content=");
 		builder.append(content);
 		builder.append(", url=");
@@ -97,6 +97,8 @@ public class Post {
 		builder.append("]");
 		return builder.toString();
 	}
+
+
 	
 	
 }

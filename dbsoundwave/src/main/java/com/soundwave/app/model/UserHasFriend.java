@@ -13,51 +13,59 @@ public class UserHasFriend implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
-	private UserFriendKey id;
+	private UserFriendKey userHasFriendId;
 	
 	
 	@ManyToOne
-	@MapsId("idUser1")
-    @JoinColumn(name = "id_user1")
-	private User idUser1;
+	@MapsId("userId1")
+    @JoinColumn(name = "user_id1")
+	private User userId1;
 	
 	@ManyToOne
-	@MapsId("idUser2")
-    @JoinColumn(name = "id_user2")
-	private User idUser2;
+	@MapsId("userId2")
+    @JoinColumn(name = "user_id2")
+	private User userId2;
 	
 	@Column(name="status")
 	private boolean status;
 
-	public UserHasFriend(UserFriendKey id, User idUser1, User idUser2, boolean status) {
-		this.id = id;
-		this.idUser1 = idUser1;
-		this.idUser2 = idUser2;
+	public UserHasFriend(UserFriendKey userHasFriendId, User userId1, User userId2, boolean status) {
+		this.userHasFriendId = userHasFriendId;
+		this.userId1 = userId1;
+		this.userId2 = userId2;
 		this.status = status;
 	}
 
 	public UserFriendKey getId() {
-		return id;
+		return userHasFriendId;
 	}
 
-	public void setId(UserFriendKey id) {
-		this.id = id;
+	public void setId(UserFriendKey userHasFriendId) {
+		this.userHasFriendId = userHasFriendId;
 	}
 
-	public User getIdUser1() {
-		return idUser1;
+	public UserFriendKey getUserHasFriendId() {
+		return userHasFriendId;
 	}
 
-	public void setIdUser1(User idUser1) {
-		this.idUser1 = idUser1;
+	public void setUserHasFriendId(UserFriendKey userHasFriendId) {
+		this.userHasFriendId = userHasFriendId;
 	}
 
-	public User getIdUser2() {
-		return idUser2;
+	public User getUserId1() {
+		return userId1;
 	}
 
-	public void setIdUser2(User idUser2) {
-		this.idUser2 = idUser2;
+	public void setUserId1(User userId1) {
+		this.userId1 = userId1;
+	}
+
+	public User getUserId2() {
+		return userId2;
+	}
+
+	public void setUserId2(User userId2) {
+		this.userId2 = userId2;
 	}
 
 	public boolean isStatus() {
@@ -75,17 +83,18 @@ public class UserHasFriend implements Serializable {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("UserHasFriend [id=");
-		builder.append(id);
-		builder.append(", idUser1=");
-		builder.append(idUser1);
-		builder.append(", idUser2=");
-		builder.append(idUser2);
+		builder.append("UserHasFriend [userHasFriendId=");
+		builder.append(userHasFriendId);
+		builder.append(", userId1=");
+		builder.append(userId1);
+		builder.append(", userId2=");
+		builder.append(userId2);
 		builder.append(", status=");
 		builder.append(status);
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
+
 	
 }
